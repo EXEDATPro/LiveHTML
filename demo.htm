@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Demo #1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="live.js"></script>
+    <link href="live.css" rel="stylesheet">
+  </head>
+  <body oncontextmenu="return false;">
+    <liveroot name="demo1">
+      <live from="demo1" to="demo2" title="Demo #2" url="?demo=2">
+        <fadeout selector=".demo1" start="0" duration="1000"></fadeout>
+        <fadein selector=".demo2" start="1100" duration="1000"></fadein>
+      </live>
+      <live from="demo2" to="demo1" title="Demo #1" url="?demo=1">
+        <fadeout selector=".demo2" start="0" duration="1000"></fadeout>
+        <fadein selector=".demo1" start="1100" duration="1000"></fadein>
+      </live>
+    </liveroot>
+    <p class="demo1" onclick="live('demo2')">DEMO 1</p>
+    <p class="demo2" style="display: none;" onclick="live('demo1')">DEMO 2</p>
+  </body>
+</html>
